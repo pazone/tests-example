@@ -11,8 +11,8 @@ import static org.apache.commons.lang3.StringUtils.isBlank;
 public class Config {
 
     public static DesiredCapabilities getBrowserCapabilities() {
-        String name = System.getenv("BROWSER");
-        String version = System.getenv("VERSION");
+        String name = System.getProperty("BROWSER");
+        String version = System.getProperty("VERSION");
         if (isBlank(version)) {
             throw new IllegalArgumentException("VERSION environment variable must be set");
         }
