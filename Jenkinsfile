@@ -4,35 +4,35 @@ pipeline {
         stage('firefox-58') {
             steps {
                 sh './mvnw clean test -DBROWSER=firefox -DVERSION=58'
-                allure()
+                allureReport()
             }
         }
 
         stage('firefox-57') {
             steps {
                 sh './mvnw clean test -DBROWSER=firefox -DVERSION=57'
-                allure()
+                allureReport()
             }
         }
 
         stage('chrome-63') {
             steps {
                 sh './mvnw clean test -DBROWSER=chrome -DVERSION=63'
-                allure()
+                allureReport()
             }
         }
 
         stage('chrome-62') {
             steps {
                 sh './mvnw clean test -DBROWSER=chrome -DVERSION=62'
-                allure()
+                allureReport()
             }
         }
     }
 
 }
 
-def allure() {
+def allureReport() {
     allure([
         includeProperties: false,
         jdk: '',
