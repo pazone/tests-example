@@ -24,7 +24,7 @@ public class GoogleSuggestTest extends BasicWebdriverTest {
     }
 
     @Test
-    public void suggestionsshouldComtainThePyramid() throws Exception {
+    public void suggestionsShouldContainThePyramid() throws Exception {
         steps.goToGoogle();
         steps.typeQuery("testing automation");
         steps.verifySuggestion();
