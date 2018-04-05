@@ -7,10 +7,6 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/**
- * @author pazone
- *         31/03/18
- */
 public class GoogleSuggestTest extends BasicWebdriverTest {
 
     private GoogleSteps steps;
@@ -21,9 +17,16 @@ public class GoogleSuggestTest extends BasicWebdriverTest {
     }
 
     @Test
-    public void searchSuggestions() throws Exception {
+    public void searchSuggestionsShouldBeVisible() throws Exception {
         steps.goToGoogle();
         steps.typeQuery("why testing is ");
+        steps.verifySuggestion();
+    }
+
+    @Test
+    public void suggestionsshouldComtainThePyramid() throws Exception {
+        steps.goToGoogle();
+        steps.typeQuery("testing automation");
         steps.verifySuggestion();
     }
 }
